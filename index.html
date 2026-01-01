@@ -13,27 +13,39 @@
             color: #e5e7eb;
         }
 
-        header {
-            background: #020617;
-            padding: 40px 20px;
+        /* ===== HEADER ===== */
+        .hero {
+            background: linear-gradient(135deg, #020617, #0f172a);
+            padding: 60px 20px;
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            margin: 10px 0 5px;
             font-size: 36px;
             color: #38bdf8;
         }
 
-        header p {
+        .hero p {
             font-size: 18px;
-            margin-top: 10px;
+            opacity: 0.9;
         }
 
+        /* ===== SECTIONS ===== */
         section {
             padding: 40px 20px;
             max-width: 900px;
             margin: auto;
+            animation: fadeIn 0.8s ease-in;
         }
 
         h2 {
@@ -42,11 +54,18 @@
             padding-bottom: 10px;
         }
 
+        /* ===== CARDS ===== */
         .card {
             background: #020617;
-            padding: 20px;
+            padding: 22px;
             margin-top: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(56, 189, 248, 0.35);
         }
 
         ul {
@@ -57,6 +76,19 @@
             margin: 8px 0;
         }
 
+        /* ===== SKILLS BADGES ===== */
+        .skills span {
+            display: inline-block;
+            background: #0f172a;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 8px 14px;
+            margin: 6px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
             background: #020617;
             text-align: center;
@@ -69,50 +101,72 @@
             color: #38bdf8;
             text-decoration: none;
         }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ANIMATION ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<header>
+<!-- ===== HEADER ===== -->
+<header class="hero">
+    <img src="https://i.ibb.co/7JtHwb6q/1767284021487.png" alt="Anuj Singh" class="profile-pic">
     <h1>Anuj Singh</h1>
-    <p>B.Tech Cyber Security Student</p>
+    <p>B.Tech Cyber Security Student.</p>
 </header>
 
+<!-- ===== ABOUT ===== -->
 <section>
     <h2>👋 About Me</h2>
     <div class="card">
         <p>
             I am Anuj Singh, a B.Tech Cyber Security student passionate about ethical hacking,
-            network security, and protecting systems from cyber attacks.
-            I enjoy learning new tools, practicing labs, and building security-based projects.
+            network security, and securing systems against cyber threats.
+            I enjoy learning new tools, practicing labs, and building security-focused projects.
         </p>
     </div>
 </section>
 
+<!-- ===== EDUCATION ===== -->
 <section>
     <h2>🎓 Education</h2>
     <div class="card">
         <p><strong>B.Tech in Cyber Security</strong></p>
         <p>Rungta International Skill University</p>
-        <p>Year: 2025 – 2029</p>
+        <p>2025 – 2029</p>
     </div>
 </section>
 
+<!-- ===== SKILLS ===== -->
 <section>
     <h2>🛠️ Skills</h2>
-    <div class="card">
-        <ul>
-            <li>Cyber Security Fundamentals</li>
-            <li>Ethical Hacking (Beginner)</li>
-            <li>Network Security</li>
-            <li>Kali Linux</li>
-            <li>HTML, CSS (Basics)</li>
-            <li>Linux Basics</li>
-        </ul>
+    <div class="card skills">
+        <span>Cyber Security Fundamentals</span>
+        <span>Ethical Hacking</span>
+        <span>Network Security</span>
+        <span>Kali Linux</span>
+        <span>Linux Basics</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Git & GitHub</span>
     </div>
 </section>
 
+<!-- ===== TOOLS ===== -->
 <section>
     <h2>🔐 Tools</h2>
     <div class="card">
@@ -120,44 +174,53 @@
             <li>Kali Linux</li>
             <li>Nmap</li>
             <li>Wireshark</li>
+            <li>Burp Suite (Basic)</li>
             <li>Git & GitHub</li>
         </ul>
     </div>
 </section>
 
+<!-- ===== PROJECTS ===== -->
 <section>
     <h2>📂 Projects</h2>
     <div class="card">
         <p><strong>1. Network Scanning using Nmap</strong></p>
-        <p>Performed port scanning and service detection.</p>
+        <p>Performed port scanning, service detection and basic vulnerability analysis.</p>
 
         <p><strong>2. Password Strength Checker</strong></p>
-        <p>Built using HTML & JavaScript to test password security.</p>
+        <p>Developed a web-based tool using HTML & JavaScript.</p>
 
         <p><strong>3. Cyber Security Awareness Project</strong></p>
-        <p>Focused on phishing and online safety awareness.</p>
+        <p>Created awareness content on phishing, malware and online safety.</p>
     </div>
 </section>
 
+<!-- ===== CAREER OBJECTIVE ===== -->
 <section>
     <h2>🎯 Career Objective</h2>
     <div class="card">
         <p>
-            To work in a challenging cyber security role where I can enhance my skills,
-            gain real-world experience, and help organizations stay secure.
+            To work in a challenging cyber security role where I can enhance my technical skills,
+            gain real-world experience, and help organizations protect their digital assets.
         </p>
     </div>
 </section>
 
+<!-- ===== CONTACT ===== -->
 <section>
     <h2>📞 Contact</h2>
     <div class="card">
         <p>Email: anujsingh91981@gmail.com</p>
-        <p>LinkedIn: <a href="#">www.linkedin.com/in/anuj-singh-305a56390</a></p>
-        <p>GitHub: <a href="#">https://github.com/anujsingh91981-art</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/anuj-singh-305a56390" target="_blank">
+            linkedin.com/in/anuj-singh
+        </a></p>
+        <p>GitHub: <a href="https://github.com/anujsingh91981-art" target="_blank">
+            github.com/anujsingh91981-art
+        </a></p>
     </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
     © 2025 Anuj Singh | Cyber Security Portfolio
 </footer>
